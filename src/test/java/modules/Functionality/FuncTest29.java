@@ -15,7 +15,7 @@ public class FuncTest29 {
     public static void enterOtherTable() {
         Component tableCards = SwitchTable.Method.getTableCards(false);
         WebElement randomTable = GetHandler.getElementByRandom(tableCards);
-        expectedTable = "Baccarat " + Helper.getLastChar(randomTable.getAttribute("data-gtm"));
+        expectedTable = "Baccarat " + Helper.getLastChar(randomTable.getAttribute("data-gtm").toUpperCase());
         EventHandler.click(tableCards, randomTable);
         WaitHandler.wait(3);
     }

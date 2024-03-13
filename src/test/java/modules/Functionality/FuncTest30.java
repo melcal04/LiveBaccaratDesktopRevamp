@@ -18,7 +18,7 @@ public class FuncTest30 {
         EventHandler.click(SwitchTable.Button.SicBoGame, 3);
         Component tableCards = SwitchTable.Method.getTableCards(true);
         WebElement randomTable = GetHandler.getElementByRandom(tableCards);
-        expectedTable = "Sic Bo " + Helper.getLastChar(randomTable.getAttribute("data-gtm"));
+        expectedTable = "Sic Bo " + Helper.getLastChar(randomTable.getAttribute("data-gtm").toUpperCase());
         EventHandler.click(tableCards, randomTable);
         WaitHandler.wait(3);
     }

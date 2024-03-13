@@ -71,7 +71,6 @@ public class Steps {
     @When("I Wait {string}")
     public void iWait(String step) {
         switch (step) {
-            case "Until 3 Seconds" -> WaitHandler.wait(3);
             case "Until Round Is Over" -> Functionality.waitUntilRoundIsOver();
             case "Until Betting Phase" -> Functionality.waitUntilBettingPhase();
             case "Until Bet Wins" -> FuncTest27.waitUntilBetWins();

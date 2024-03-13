@@ -198,14 +198,14 @@ Feature: Functionality
   @FunctionalityTest32
   Scenario: FT Test 32: Checking The Functionality Of The Player Prediction Button
     When I Enter The Dealer Table
-    And I Wait "Until 3 Seconds"
+    And I Wait "Until Betting Phase"
     And I Click "The Player Prediction Button"
     Then I Verify "The Functionality Of The Player Prediction Button"
 
   @FunctionalityTest33
   Scenario: FT Test 33: Checking The Functionality Of The Banker Prediction Button
     When I Enter The Dealer Table
-    And I Wait "Until 3 Seconds"
+    And I Wait "Until Betting Phase"
     And I Click "The Banker Prediction Button"
     Then I Verify "The Functionality Of The Banker Prediction Button"
 
