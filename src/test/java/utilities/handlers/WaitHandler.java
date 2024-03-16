@@ -81,7 +81,7 @@ public class WaitHandler extends AutomationSetup {
             String name = component.getName();
             String type = component.getType();
             String page = component.getPage();
-            Printer.printError("Failed to wait the visibility of \"" + name + "\" " + type + " on " + page);
+            Printer.printError("Failed to wait the invisibility of \"" + name + "\" " + type + " on " + page);
             throw e;
         }
     }

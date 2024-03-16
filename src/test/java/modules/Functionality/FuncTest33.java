@@ -1,9 +1,8 @@
 package modules.Functionality;
 
 import pages.DealerTable;
+import utilities.handlers.ConditionHandler;
 import utilities.handlers.EventHandler;
-import utilities.handlers.GetHandler;
-import utilities.handlers.WaitHandler;
 import utilities.objects.CustomAssert;
 
 public class FuncTest33 {
@@ -14,8 +13,7 @@ public class FuncTest33 {
         System.out.println("Test Case: 33");
         System.out.println("Actual Results: ");
 
-        WaitHandler.waitInvisibility(DealerTable.Label.Shuffle, 300);
-        CustomAssert.assertEquals(5, GetHandler.getTextArray(DealerTable.Container.Predictions).length,
+        CustomAssert.assertTrue(ConditionHandler.isDisplayed(DealerTable.Container.Predictions, 5),
                 "** Prediction in All Road Maps is Displayed",
                 "** Prediction in All Road Maps is Not Displayed");
 

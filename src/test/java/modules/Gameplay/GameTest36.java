@@ -13,7 +13,7 @@ public class GameTest36 extends Gameplay {
         do {
             WaitHandler.waitVisibility(DealerTable.Label.ShowDealing, 300);
             System.out.println("Round Count: " + (++count));
-            WaitHandler.waitInvisibility(DealerTable.Label.Shuffle, 300);
+            WaitHandler.waitInvisibility(DealerTable.Label.Shuffle, 600);
             WaitHandler.waitVisibility(DealerTable.Label.PlaceYourBetsPlease, 300);
         } while (count < 8);
 

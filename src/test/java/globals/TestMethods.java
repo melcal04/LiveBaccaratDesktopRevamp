@@ -18,7 +18,7 @@ public class TestMethods {
      ***************************************************************************************************************/
 
     public static void waitBettingPhase(int specifiedTime, boolean isExact) {
-        WaitHandler.waitInvisibility(DealerTable.Label.Shuffle, 300);
+        WaitHandler.waitInvisibility(DealerTable.Label.Shuffle, 600);
         WaitHandler.waitVisibility(DealerTable.Label.ShowTimer, 300);
         int currentTimerValue = isExact ? 45 : -1;
         while (isExact ? (currentTimerValue != specifiedTime) : (currentTimerValue < specifiedTime))
@@ -37,6 +37,8 @@ public class TestMethods {
         int bankerTotal = GetHandler.getInt(DealerTable.Label.BankerTotalPoints);
 
         List<String> roundResults = new ArrayList<>();
+        roundResults.add("P " + Helper.toString(playerCards));
+        roundResults.add("B " + Helper.toString(bankerCards));
         if (TestConditions.isWin(DealerTable.BettingOption.Tie)) {
             roundResults.add(TestVariables.TIE);
             if ((playerCards.length == 2 && bankerCards.length == 2) &&
@@ -117,7 +119,7 @@ public class TestMethods {
      ***************************************************************************************************************/
 
     public static double getUpdatedBalance() {
-        WaitHandler.wait(7);
+        WaitHandler.wait(5);
         return GetHandler.getDouble(DealerTable.Label.BalanceValue);
     }
 
@@ -136,24 +138,5 @@ public class TestMethods {
         EventHandler.click(ChipSettings.Button.Save);
     }
 
-    /***************************************************************************************************************
-     * The 'getDragonBonusMultiplier' method is used to retrieve the multiplier of the Dragon Bonus.
-     ***************************************************************************************************************/
-
-    public static int getDragonBonusMultiplier(String[] roundResult) {
-        for (String result : roundResult) {
-            int difference = Integer.parseInt(Helper.getLastChar(result));
-            return switch (difference) {
-                case 9 -> 30;
-                case 8 -> 10 ;
-                case 7 -> 6;
-                case 6 -> 4;
-                case 5 -> 2;
-                case 4 -> 1;
-                default -> throw new IllegalStateException("Unexpected Dragon Bonus Result: " + difference);
-            };
-        }
-        return 0;
-    }
 
 }

@@ -388,7 +388,7 @@ public class DealerTable {
                 "Shuffle",
                 "Label",
                 "Dealer Table Page",
-                "//div[@class='status shuffle']"
+                "//div[contains(@class, 'shuffle')]"
         );
         public static Component VideoIcon = new Component(
                 "Video Icon",
